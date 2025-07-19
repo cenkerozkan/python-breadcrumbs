@@ -1,4 +1,5 @@
 def singleton(class_):
+    print("Entry point")
     instances = {}
     print(instances)
     def getinstance(*args, **kwargs):
@@ -8,14 +9,12 @@ def singleton(class_):
         return instances[class_]
     return getinstance
 
-
-
 @singleton
 class A:
     a=1
     pass
 
+obj1 = A()
 obj2 = A()
 obj3 = A()
-
-print(id(obj2), id(obj3))
+obj4 = A()
