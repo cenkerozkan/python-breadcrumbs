@@ -24,7 +24,7 @@ def func2(exp: int = 6):
 
 
 #func1()
-func2()
+#func2()
 
-#func1(7)
+func1(7)
 func2(7)
