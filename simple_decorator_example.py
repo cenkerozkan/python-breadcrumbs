@@ -1,5 +1,6 @@
 from time import time, sleep
 
+
 def calc_time(multiplier: int):
     def inner(func):
         def wrapper(*args, **kwargs):
@@ -8,7 +9,9 @@ def calc_time(multiplier: int):
             end = time()
             print(f"Multiplied by {multiplier} time: {end - start}")
             print(f"{func.__name__} took {end - start} seconds")
+
         return wrapper
+
     return inner
 
 

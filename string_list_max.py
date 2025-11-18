@@ -1,5 +1,5 @@
 versions: list = ["1111.1.2", "2.3.41", "0.5.0", "2.312.5", "65.0.1"]
-versions_inted_copy = [[int(i) for i in j.split(".") ] for j in versions]
+versions_inted_copy = [[int(i) for i in j.split(".")] for j in versions]
 
 sym_max: list | None = None
 for i in versions_inted_copy:

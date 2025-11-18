@@ -1,7 +1,9 @@
 """
 This is a simple iterator example that takes
 """
+
 from typing import Iterable
+
 
 class SimpleIterator:
     def __init__(self, length: int = 10):
@@ -23,7 +25,8 @@ class SimpleIterator:
             raise StopIteration
         return self._list.pop(0)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     obj = SimpleIterator(length=120)
     obj_iterator = iter(obj)
     for i in obj_iterator:

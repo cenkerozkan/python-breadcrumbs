@@ -1,7 +1,9 @@
 """A custom implementation of the reduce function using iter() and next()."""
 
-def add(x,y):
-    return x+y
+
+def add(x, y):
+    return x + y
+
 
 def custom_reduce(iterable, func):
     it = iter(iterable)
@@ -13,4 +15,5 @@ def custom_reduce(iterable, func):
         except StopIteration:
             return result
 
-print(custom_reduce([1,2], add))
+
+print(custom_reduce([1, 2], add))

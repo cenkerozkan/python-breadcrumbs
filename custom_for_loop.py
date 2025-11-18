@@ -4,6 +4,7 @@ from typing import Container, Callable
 
 sample_string = "abcde"
 
+
 def custom_for(container: Container, func: Callable) -> None:
     cont_iter = iter(container)
     while True:
@@ -13,8 +14,9 @@ def custom_for(container: Container, func: Callable) -> None:
             print(str(e))
             break
 
+
 custom_for(sample_string, print)
-custom_for([1,2,3,4], print)
-custom_for((1,2,3,4,5), print)
-custom_for(range(1,125,25), print)
-custom_for((i for i in range(1,5)), print)
+custom_for([1, 2, 3, 4], print)
+custom_for((1, 2, 3, 4, 5), print)
+custom_for(range(1, 125, 25), print)
+custom_for((i for i in range(1, 5)), print)

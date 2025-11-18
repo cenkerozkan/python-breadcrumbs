@@ -1,9 +1,12 @@
 import asyncio
 from time import time, sleep
 
-sample_input_1:list[list[int]] = [[1,2], [3,4]]
-sample_input_2:list[list[int]] = [[1, 2, 2.3, 4, 5]] + [[3, 7, 3, 8, 15]] # Also with a plus
-sample_input_3:list[list[int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+sample_input_1: list[list[int]] = [[1, 2], [3, 4]]
+sample_input_2: list[list[int]] = [[1, 2, 2.3, 4, 5]] + [
+    [3, 7, 3, 8, 15]
+]  # Also with a plus
+sample_input_3: list[list[int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
 
 async def validate_lengths(input: list):
     sym_len: int = 0
@@ -14,6 +17,7 @@ async def validate_lengths(input: list):
         if sym_len != len(i):
             raise ValueError("Every lists must have the same length.")
 
+
 async def list_sum(input: list) -> list:
     await asyncio.sleep(1)
     await validate_lengths(input)
@@ -23,15 +27,20 @@ async def list_sum(input: list) -> list:
             my_result[j] += i[j]
     return my_result
 
+
 async def main():
     start_time = time()
-    result = await asyncio.gather(list_sum(sample_input_1), list_sum(sample_input_2), list_sum(sample_input_3))
+    result = await asyncio.gather(
+        list_sum(sample_input_1), list_sum(sample_input_2), list_sum(sample_input_3)
+    )
     end_time = time()
     print(f"Time taken: {end_time - start_time}")
+
 
 asyncio.run(main())
 
 ###########################
+
 
 def validate_lengths_sync(input: list):
     sym_len: int = 0
@@ -42,6 +51,7 @@ def validate_lengths_sync(input: list):
         if sym_len != len(i):
             raise ValueError("Every lists must have the same length.")
 
+
 def list_sum_sync(input: list) -> list:
     sleep(1)
     validate_lengths_sync(input)
@@ -50,6 +60,7 @@ def list_sum_sync(input: list) -> list:
         for j in range(len(i)):
             my_result[j] += i[j]
     return my_result
+
 
 def main_sync():
     start_time = time()

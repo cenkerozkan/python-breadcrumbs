@@ -11,7 +11,8 @@ Example:
     >>> find_common_elements([[1,2,3], [1,2,5], [1,8,9]])
     {1}
 """
-lists_sample: list = [[1,2,3], [1,2,5], [1,8,9]]
+
+lists_sample: list = [[1, 2, 3], [1, 2, 5], [1, 8, 9]]
 
 list_of_sets = [set(list) for list in lists_sample]
 print(list_of_sets)

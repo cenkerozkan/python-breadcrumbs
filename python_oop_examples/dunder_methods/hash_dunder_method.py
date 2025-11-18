@@ -2,11 +2,12 @@ class Person:
     """
     A short example written to demonstrate how the __hash__ dunder method works in Python.
     """
+
     def __init__(
-            self,
-            name: str,
-            surname: str,
-            age: int,
+        self,
+        name: str,
+        surname: str,
+        age: int,
     ) -> None:
         self.name = name
         self.age = age
@@ -14,7 +15,9 @@ class Person:
 
     def __eq__(self, other) -> bool:
         if not isinstance(other, Person):
-            raise TypeError(f"Cannot compare different classes than {self.__class__.__name__}")
+            raise TypeError(
+                f"Cannot compare different classes than {self.__class__.__name__}"
+            )
         return self.name == other.name and self.age == other.age
 
     def __hash__(self) -> int:

@@ -3,6 +3,8 @@ THESE ARE LEETCODE SOLUTIONS, NOT MINE
 """
 
 from typing import List
+
+
 class Solution:
     @staticmethod
     def twoSum(nums: List[int], target: int) -> List[int]:
@@ -15,6 +17,7 @@ class Solution:
                 return [numMap[complement], i]
             numMap[nums[i]] = i
         return []  # No solution found
+
 
 print(Solution.twoSum(nums=[2, 11, 7, 7, 15, 3, 6], target=9))
 

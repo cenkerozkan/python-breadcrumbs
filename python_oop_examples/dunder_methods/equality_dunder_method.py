@@ -4,17 +4,16 @@ class Person:
     When defining the __eq__ method, it’s generally good practice to verify that the
     object passed to the method is an instance of that class, using the first parameter.
     """
-    def __init__(
-            self,
-            name: str,
-            age: int
-    ) -> None:
+
+    def __init__(self, name: str, age: int) -> None:
         self.name = name
         self.age = age
 
     def __eq__(self, other) -> bool:
         if not isinstance(other, Person):
-            raise TypeError(f"Cannot compare different classes than {self.__class__.__name__}")
+            raise TypeError(
+                f"Cannot compare different classes than {self.__class__.__name__}"
+            )
         return self.name == other.name and self.age == other.age
 
 

@@ -3,12 +3,13 @@
 from pprint import pprint
 
 status_point_dict: dict = {
-    "occupied": [(1,1), (0,1), (1,2)],
-    "available": [(0,0), (2,1)],
-    "unknown": [(1,0), (0,2), (2,2), (2,0)],
-    "visited": [(0,0), (1,2), (1,1)],
-    "visit_planned":[]
+    "occupied": [(1, 1), (0, 1), (1, 2)],
+    "available": [(0, 0), (2, 1)],
+    "unknown": [(1, 0), (0, 2), (2, 2), (2, 0)],
+    "visited": [(0, 0), (1, 2), (1, 1)],
+    "visit_planned": [],
 }
+
 
 def find_unique_tuples(data: dict) -> set[tuple]:
     value_set: set = set()
@@ -17,10 +18,11 @@ def find_unique_tuples(data: dict) -> set[tuple]:
             value_set.add(i)
     return value_set
 
+
 def shitty_mapping(data: dict, tuples: set[tuple]) -> list[tuple]:
     shitty_map: list[tuple] = []
     for value in tuples:
-        temp_keys=[]
+        temp_keys = []
         for key in data.keys():
             if value in data[key]:
                 temp_keys.append(key)
@@ -29,6 +31,7 @@ def shitty_mapping(data: dict, tuples: set[tuple]) -> list[tuple]:
         if len(data[key]) == 0:
             shitty_map.append(tuple((key,)))
     return shitty_map
+
 
 def reverse_dict(data: dict) -> dict:
     unique_tuples: set[tuple] = find_unique_tuples(data)
@@ -42,7 +45,7 @@ def reverse_dict(data: dict) -> dict:
     return reversed_data
 
 
-#print(find_unique_tuples(status_point_dict))
+# print(find_unique_tuples(status_point_dict))
 print(shitty_mapping(status_point_dict, find_unique_tuples(status_point_dict)))
 result_one = reverse_dict(status_point_dict)
 pprint(result_one)
