@@ -19,7 +19,7 @@ class Solution:
 print(Solution.twoSum(nums=[2, 11, 7, 7, 15, 3, 6], target=9))
 
 
-class Solution:
+class SolutionTwo:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         numMap = {}
         n = len(nums)

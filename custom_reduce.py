@@ -1,3 +1,5 @@
+"""A custom implementation of the reduce function using iter() and next()."""
+
 def add(x,y):
     return x+y
 

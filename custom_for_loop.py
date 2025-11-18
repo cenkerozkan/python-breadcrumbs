@@ -1,5 +1,7 @@
 from typing import Container, Callable
 
+"""A custom implementation of a for loop using iter() and next()."""
+
 sample_string = "abcde"
 
 def custom_for(container: Container, func: Callable) -> None:
